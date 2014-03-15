@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Bitstamp Transactions Request",
+  "id": "bitstamp.transactions.request",
+  "properties": {
+    "timeframe": {
+      "enum": [
+        "minute",
+        "hour"
+      ],
+      "default": "hour"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type":"object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "Coinbase Amount",
+  "id": "coinbase.amount",
+  "properties":{
+    "amount": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9][0-9]$"
+    },
+    "currency": {
+      "type": "string"
+    }
+  },
+  "required": ["amount", "currency"]
+}

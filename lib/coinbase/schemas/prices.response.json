@@ -1,0 +1,43 @@
+{
+  "type":"object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "Coinbase Prices Response",
+  "id": "coinbase.prices.response",
+  "allOf": [
+    { "$ref": "coinbase.amount" },
+    { "properties":{
+        "fees": {
+          "type":"array",
+          "items":{
+            "type":"object",
+              "oneOf": [
+                {
+                  "properties": {
+                    "coinbase": {
+                      "$ref": "coinbase.amount"
+                    }
+                  },
+                  "required": ["coinbase"]
+                },
+                {
+                  "properties": {
+                    "bank": {
+                      "$ref": "coinbase.amount"
+                    }
+                  },
+                  "required": ["bank"]
+                }
+              ]
+          }
+        },
+        "subtotal": {
+          "$ref": "coinbase.amount"
+        },
+        "total": {
+          "$ref": "coinbase.amount"
+        }
+      }
+    }
+  ],
+  "required": ["fees", "subtotal","total"]
+}

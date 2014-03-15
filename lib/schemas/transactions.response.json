@@ -1,0 +1,24 @@
+{
+  "type": "array",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "CoinAPI Transactions Response",
+  "id": "coinapi.transactions.response",
+  "items": {
+    "type": "object",
+    "properties": {
+      "amount": {
+        "type":"string"
+      },
+      "date": {
+        "type":"string"
+      },
+      "price": {
+        "type":"string"
+      },
+      "tid": {
+        "type":"number"
+      }
+    },
+    "required": ["amount","date","price","tid"]
+  }
+}
