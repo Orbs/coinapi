@@ -45,5 +45,9 @@
     "grunt-blanket": "0.0.8",
     "grunt-contrib-copy": "~0.4.1",
     "mocha": "~1.17.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Orbs/coinapi.git"
   }
 }
