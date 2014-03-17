@@ -24,8 +24,8 @@ bitstamp.md
 jsonschema.js
 todo.md
 
-bitstamp.js
-coinbase.js
+/bitstamp.js
+/coinbase.js
 lib/exchanges/Coinbase.js
 test
 
