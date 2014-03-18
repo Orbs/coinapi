@@ -31,10 +31,11 @@ In the future, additional providers may get native support in CoinAPI. However, 
 
 Providers that get native support include:
 
-- BTC-e
-- Huobi
-- CampBX
 - Bitfinex
+- BTC-e
+- CampBX
+- Cryptsy
+- Huobi
 
 ### Add a provider
 
@@ -64,6 +65,73 @@ var coinbase = new CoinbaseProvider({
 });
 ```
 
+## CoinAPI Methods
 
+CoinAPI provides a standard set of methods that can be used to call any provider (Coinbase, Bitstamp, etc.). All of these methods are called in the same way, accept the same request data format, and return the same response data format, regardless of which provider is being used. In cases where a provider does not support the method or full data attributes, an appropriate response is returned.
+
+The common methods that will be provided by CoinAPI are currently in flux. As we add more providers, the methods and payloads will solidify. Many of the following proposed methods have been implemented or will soon be available:
+
+```
+api.account.balance
+api.account.receiveAddress
+api.account.receiveAddress.create
+api.account.changes
+api.buy
+api.currencies
+api.currencies.rates
+api.markets
+api.orders
+api.orders.create
+api.prices.buy
+api.prices.sell
+api.prices.spot
+api.prices.historical
+api.sell
+api.ticker
+api.transactions
+api.transactions.send
+api.transactions.request
+api.transactions.resend
+api.transactions.cancel
+api.transactions.complete
+api.transfers
+```
+
+### CoinAPI Examples
+
+```
+coinbase.api.ticker(function(err, results) {
+  console.log(err, results);
+});
+
+coinbase.api.prices.buy(function(err, results) {
+  console.log(err, results);
+},{
+  qty: 5,
+  currency: 'EUR'
+});
+
+coinbase.api.account.balance(function(err, results) {
+  console.log(err, results);
+});
+```
+
+## Vendor Methods
+
+All vendor-specific endpoints are supported by CoinAPI. They are available on the `vendor` property of the CoinAPI instance. Example vendor calls:
+
+```
+coinbase.vendor.generate_receive_address(function(err, results) {
+  console.log(err, results);
+});
+
+coinbase.vendor.account.balance(function(err, results) {
+  console.log(err, results);
+});
+
+coinbase.vendor.account_changes(function(err, results) {
+  console.log(err, results);
+});
+```
 
 
