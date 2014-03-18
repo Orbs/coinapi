@@ -9,6 +9,8 @@ CoinAPI is a node.js module for communicating with bitcoin and altcoin service p
 - Common API for multiple bitcoin providers
 - Normalized request and response objects across providers
 - Extendable to work with any provider without requiring an accepted pull request
+- Support both REST and WebSocket providers
+- Compatible with OAuth providers such as Coinbase (access_token and refresh tokens)
 - JSON Schema for all supported provider endpoints
 - JSON Schema based validation of both request and response objects
 - JSON Schema leveraged during normalization from native API objects to CoinAPI objects
