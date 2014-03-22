@@ -29,6 +29,9 @@ todo.md
 lib/exchanges/Coinbase.js
 test
 
+*.sublime-project
+*.sublime-workspace
+
 ################################################
 # Dependencies
 #
